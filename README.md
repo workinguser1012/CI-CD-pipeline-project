@@ -20,28 +20,29 @@ The pipeline integrates multiple DevOps tools to simulate a real-world software 
 - Kubernetes (Deployment)
 - Argo CD (GitOps continuous delivery)
 
----
 
 ## Project Structure
-.
+
+```
+ci-cd-pipeline-project/
+│
 ├── Dockerfile
 ├── Jenkinsfile
+│
 ├── app/
-│ ├── pom.xml
-│ └── src/
+│   ├── pom.xml
+│   └── src/
 │
 ├── k8s/
-│ ├── deployment.yml
-│ └── service.yml
+│   ├── deployment.yml
+│   └── service.yml
 │
 ├── argocd/
-│ └── argocd-basic.yaml
+│   └── argocd-basic.yaml
 │
 ├── docs/
 └── README.md
-
----
-
+```
 ## CI/CD Pipeline Workflow
 
 1. Code is pushed to the repository  
