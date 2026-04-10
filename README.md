@@ -100,14 +100,7 @@ cd app
 mvn clean package
 
 Build Docker Image
-docker build -t your-dockerhub-username/app-name .
+docker build -t cicd-pipleine:v1 .
 
-Push Docker image
-docker push your-dockerhub-username/app-name
-
-
-Deploy to Kubernetes
-kubectl apply -f k8s/
-
-Apply Argo CD configuration
-kubectl apply -f argocd/argocd-basic.yaml
+Run Docker Image
+docker run -d -p 8010:8080 -t cicd-pipeline:v1
