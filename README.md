@@ -107,6 +107,7 @@ docker run -d -p 8010:8080 -t cicd-pipeline:v1
 
 ```
 
+###  Final Project Image
 
 
 <img width="1919" height="978" alt="image" src="https://github.com/user-attachments/assets/f2578db9-4497-44c3-90b9-f8006c9aa99a" />
