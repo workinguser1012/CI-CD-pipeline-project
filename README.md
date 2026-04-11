@@ -105,7 +105,7 @@ docker build -t cicd-pipleine:v1 .
 Run Docker Image
 docker run -d -p 8010:8080 -t cicd-pipeline:v1
 
-
+```
 
 
 
