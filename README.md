@@ -112,3 +112,67 @@ docker run -d -p 8010:8080 -t cicd-pipeline:v1
 
 <img width="1919" height="978" alt="image" src="https://github.com/user-attachments/assets/f2578db9-4497-44c3-90b9-f8006c9aa99a" />
 
+
+## Requirments 
+
+
+### Java code hosted on a repository
+### Jenkins server
+### Kubernetes cluster
+### Helm package manager
+### ArgoCD
+
+
+### Launch a AWS Instance 
+
+## Aim for 8 GB of memory
+
+
+
+
+
+### Install Java and Jenkins
+
+## Install Java 
+```
+sudo apt update
+sudo apt install openjdk-17-jre
+```
+
+## Install Jenkins
+``` curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
+sudo chmod 644 /usr/share/keyrings/jenkins-keyring.asc
+
+echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/" | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+sudo apt-get update
+sudo apt-get install -y fontconfig openjdk-17-jre jenkins
+```
+
+Open Port 8080 In the Traffic Inbound Rules on AWS as by defeault AWS has restricted jenkins accessibility by deafault 
+
+Configure Jenkins 
+
+## Login into Jenkins
+
+
+
+Run the command to gain access to the password - sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+
+After Select install Sugested Plugins and procede to login in to Jenkins
+
+
+
+### Install Docker in Jenkins
+
+Go to Manage Plugins and install Docker Pipeline
+
+
+As We are using Docker Agents our Jenkins Pipelines as it makes the complexity of our configuration easier rather than having to install different dependencies on each ec2 everytime we scale up
+
+
+
