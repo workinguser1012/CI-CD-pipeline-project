@@ -175,4 +175,89 @@ Go to Manage Plugins and install Docker Pipeline
 As We are using Docker Agents our Jenkins Pipelines as it makes the complexity of our configuration easier rather than having to install different dependencies on each ec2 everytime we scale up
 
 
+## Install Docker
+
+```
+sudo apt update
+sudo apt install docker.io
+```
+
+### Configure SonarQube
+
+
+
+SonarQube may seem complicated to install however if you follow all these steps i have simplified it down for you and you should have no problem downloading it.
+
+Make sure you are logged into your ubuntu@Ipadress 
+```sudo Su - ```
+
+Now you Should be in your Root@Ipaddress
+
+```
+adduser sonarqube
+Sudo install unzip
+```
+
+Now Switch to your sonarqube
+
+```
+sudo su sonarqube
+wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-10.4.1.88267.zip
+unzip *
+exit
+sudo mv /home/sonarqube/sonarqube-10.4.1.88267 /opt/sonarqube
+sudo chown -R sonarqube:sonarqube /opt/sonarqube
+cd /opt/sonarqube/bin/linux-x86-64
+./sonar.sh status
+```
+
+
+Check if its running
+
+```
+./sonar.sh status
+```
+
+Open on http://<your-ec2-ip>:9000
+
+Username : admin
+Password : admin
+
+
+
+Create a Token on sonar qube 
+
+
+
+
+Link it to your Jenkins 
+
+Go to Manage Jenkins then Security then Credentials 
+
+Fill in your secret choose a name and leave the description Blank
+
+
+
+### Docker Configuration
+
+## Install Docker
+
+``` Sudo apt install docker.io```
+
+### Grant Jenkins and Ubuntu Permission to access docker and then restart
+```sudo su - 
+usermod -aG docker jenkins
+usermod -aG docker ubuntu
+systemctl restart docker
+```
+ 
+
+
+### Kubernetes Configuration
+
+Follow the Doccumentation on the Officall Kubernetes Website to Download and after downloaded Follow along
+
+MINIKUBE IS REQUIRED
+
+
 
